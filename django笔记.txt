@@ -1,4 +1,20 @@
 1.创建项目
 django-admin startproject [项目名]
+
 2.创建应用
 django-admin startapp [应用名]
+
+3.更新表
+python manage.py makemigrations
+
+4.同步表到数据库
+python manage.py migrate
+
+5.设置postgresql
+A.     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'wuxj_test',
+        'USER': 'knight',
+        "PASSWORD": 'knight',
+        "HOST": '127.0.0.1',
+        'PORT': 5432,
+B.需要下载psycopg2:pip install psycopg2
