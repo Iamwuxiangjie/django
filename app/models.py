@@ -2,6 +2,9 @@ from django.db import models
 
 
 class User(models.Model):
+    def __str__(self):
+        return self.name
+
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=32)
     password = models.CharField(max_length=32)
@@ -10,6 +13,8 @@ class User(models.Model):
 
 
 class Book(models.Model):
+    def __str__(self):
+        return self.name
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=32)
     author = models.CharField(max_length=32)

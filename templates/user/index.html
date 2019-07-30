@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>主页</title>
+</head>
+<style type="text/css">
+  table{
+    width: 100%;
+  }
+  table th{
+    border: 1px solid #eee;
+  }
+  table td{
+    text-align: center;
+    border: 1px solid #eee;
+  }
+</style>
+<body style="margin: 0">
+<div id="header" style="background: #eee;    height: 21px;padding: 1rem">
+  <span style="float:left">欢迎{{request.session.currentUser}}</span>
+  <a style="float:right;display: block" href="/user/logout">退出</a>
+</div>
+<div id="content" style="padding: 40px">
+  <Table>
+    <tr>
+      <th>ID</th>
+      <th>书名</th>
+      <th>作者</th>
+      <th>发布时间</th>
+      <th>拥有者</th>
+      <th>操作</th>
+    </tr>
+    {% for i in list %}
+      <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.author}}</td>
+        <td>{{i.publishTime.year}}-{{i.publishTime.month}}-{{i.publishTime.day}}</td>
+        <td>{{i.user.name}}</td>
+        <td>
+          <a>删除</a>
+          <a>修改</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </Table>
+</div>
+
+</body>
+</html>

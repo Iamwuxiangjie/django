@@ -14,8 +14,13 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.views.generic import RedirectView,TemplateView
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^user/login', 'app.views.login'),
+
+    url(r'^user/login$', 'app.controller.LoginController.login'),
+    url(r'^user/logout$', 'app.controller.LoginController.logout'),
+
+    url(r'^user/index.html$', 'app.controller.IndexController.index'),
 ]

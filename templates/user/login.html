@@ -6,8 +6,13 @@
 </head>
 <body>
 <form method="post" action="/user/login">
-  {{form}}
+  <label>用户名:</label>
+  <input type="text" placeholder="请输入用户名" name="name"/><br>
+  <label>密码:</label>
+  <input type="password" placeholder="请输入密码" name="password"/><br>
+  <p style="color:red">{{error}}</p>
   <input type="submit" value="提交"/>
+  <a>注册</a>
 </form>
 </body>
 </html>

@@ -49,6 +49,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    #'django.core.context_processors.request',
 )
 
 ROOT_URLCONF = 'DjangoDemo.urls'
@@ -77,12 +78,12 @@ WSGI_APPLICATION = 'DjangoDemo.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'wuxj_test',
-        'USER': 'knight',
-        "PASSWORD": 'knight',
-        "HOST": '127.0.0.1',
-        'PORT': 5432,
+        # 'USER': 'knight',
+        # "PASSWORD": 'knight',
+        # "HOST": '127.0.0.1',
+        # 'PORT': 5432,
     }
 }
 
@@ -97,6 +98,7 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_L10N = True
+
 
 USE_TZ = True
 
