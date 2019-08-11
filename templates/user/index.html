@@ -31,7 +31,7 @@
       <th>拥有者</th>
       <th>操作</th>
     </tr>
-    {% for i in list %}
+    {% for i in book_list %}
       <tr>
         <td>{{i.id}}</td>
         <td>{{i.name}}</td>
@@ -44,8 +44,33 @@
         </td>
       </tr>
     {% endfor %}
+
+      <form method="post" action="/book/add">
+          <tr>
+              <td></td>
+              <td><input type="text" name="name"/></td>
+              <td><input type="text" name="author"/></td>
+              <td>
+                  <input type="text" name="year" style="width: 60px"/>年
+                  -
+                  <input type="text" name="month" style="width: 60px"/>月
+                  -
+                  <input type="text" name="day" style="width: 60px"/>日
+              </td>
+              <td>
+                  <select>
+                      {% for i in user_list %}
+                          <option name="{{i.id}}">{{ i.name }}</option>
+                      {% endfor %}
+                  </select>
+              </td>
+              <td>
+                  <input type="submit" value="新增"/>
+              </td>
+          </tr>
+      </form>
   </Table>
-  <button>新增</button>
+
 </div>
 
 </body>

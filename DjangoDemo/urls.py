@@ -14,13 +14,16 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from django.views.generic import RedirectView,TemplateView
+
+from app.controller.ErrorController import permission_denied, page_not_found, page_error
+from app.controller.UserController import urlpatterns as user_urls
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^user/login$', 'app.controller.LoginController.login'),
-    url(r'^user/logout$', 'app.controller.LoginController.logout'),
-
-    url(r'^user/index.html$', 'app.controller.IndexController.index'),
+    url(r'^user/', include(user_urls)),
 ]
+
+handler403 = permission_denied
+handler404 = page_not_found
+handler500 = page_error

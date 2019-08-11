@@ -25,7 +25,7 @@ SECRET_KEY = '%z*yp-7t9=rx%y*tc3&^nf-u-&%-0yqfhr6ykr8bp4pzx=y2-i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -50,6 +50,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     #'django.core.context_processors.request',
+    'app.filter.Filter.LoginFilter',
 )
 
 ROOT_URLCONF = 'DjangoDemo.urls'

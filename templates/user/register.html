@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>登录</title>
+    <meta charset="UTF-8">
+    <title>注册</title>
 </head>
 <body>
-<h3 style="text-align:center">登录</h3>
+<h3 style="text-align:center">注册</h3>
 <div style="width:180px;margin:0 auto">
-    <form method="post" action="/user/login">
+    <form method="post" action="/user/register">
         <p>用户名:</p>
         <input type="text" placeholder="请输入用户名" name="name"/><br>
         <p>密码:</p>
         <input type="password" placeholder="请输入密码" name="password"/><br>
         <p style="color:red">{{error}}</p>
-        <input type="submit" value="登录"/>
-        <a href="/user/register">注册</a>
+        <input type="submit" value="注册"/>
+        <a href="/user/login">登录</a>
     </form>
 </div>
 

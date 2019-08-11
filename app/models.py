@@ -1,20 +1,22 @@
 from django.db import models
+import datetime
 
 
 class User(models.Model):
-    def __str__(self):
-        return self.name
-
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=32)
     password = models.CharField(max_length=32)
     createTime = models.DateTimeField()
     enable = models.BooleanField(default=True)
 
+    def __str__(self):
+        return self.name
+
 
 class Book(models.Model):
     def __str__(self):
         return self.name
+
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=32)
     author = models.CharField(max_length=32)
