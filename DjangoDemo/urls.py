@@ -17,11 +17,13 @@ from django.contrib import admin
 
 from app.controller.ErrorController import permission_denied, page_not_found, page_error
 from app.controller.UserController import urlpatterns as user_urls
+from app.controller.BookController import urlpatterns as book_urls
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^user/', include(user_urls)),
+    url(r'^book/', include(book_urls)),
 ]
 
 handler403 = permission_denied

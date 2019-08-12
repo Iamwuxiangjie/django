@@ -18,7 +18,7 @@ def doRegister(name, password):
         return {'code': 500, 'error': u'请输入用户名或密码'}
     users = User.objects.filter(name=name)
     if len(users) == 0:
-        user = User(name=name, password=password,createTime=datetime.datetime.now())
+        user = User(name=name, password=password, createTime=datetime.datetime.now())
         user.save()
         return {'code': 200, 'data': user}
     else:

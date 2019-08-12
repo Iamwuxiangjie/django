@@ -11,5 +11,5 @@ class LoginFilter(MiddlewareMixin):
     not_filter = ['/user/login', '/user/register']
 
     def process_request(self, req):
-        if (not req.path in self.not_filter) and (not req.session.get('currentUser', None)):
+        if (req.path not in self.not_filter) and (not req.session.get('currentUser', None)):
             return HttpResponseRedirect('/user/login')
